@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Table from './Table'
 import axios from 'axios';
-import { data } from 'react-router-dom';
+import 'react-router-dom';
 
 const Users = () => {
   const [users , setUsers] = useState([]);

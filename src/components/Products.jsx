@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Table from './Table'
 import axios from 'axios';
-import { data } from 'react-router-dom';
+import 'react-router-dom';
 
 const Products = () => {
   const [products , setProducts] = useState([]);
@@ -18,5 +18,4 @@ const Products = () => {
     </div>
   )
 }
-
 export default Products

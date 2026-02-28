@@ -1,13 +1,12 @@
 import React from 'react';
-import { Outlet, Route, Routes, useNavigate } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import "../styles/Dashboard.css";
-import { toast } from 'react-toastify';
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
-import Users from './Users';
-import Carts from './Carts';
-import Products from './Products';
-import Settings from './Settings';
+import  './Users';
+import  './Carts';
+import  './Products';
+import './Settings';
 
 const Dashboard = () => {
   return (
