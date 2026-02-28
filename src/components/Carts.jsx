@@ -1,8 +1,11 @@
 import React from 'react'
+import Table from './Table'
 
 const Carts = () => {
   return (
-    <div>Carts</div>
+    <div>
+      <Table/>
+    </div>
   )
 }
 

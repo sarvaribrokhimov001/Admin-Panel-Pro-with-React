@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useState , useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import "../styles/LoginForm.css";
@@ -9,6 +9,10 @@ const LoginForm = () => {
         username: "kevinryan",
         password: "kev02937@"
     });
+
+    useEffect(() => {
+        toast.info("Assalomu alaykum Login Page ga xush kelibsiz !");
+    }, []);
 
     const navigate = useNavigate();
 
@@ -25,7 +29,7 @@ const LoginForm = () => {
             if(data?.data?.token) {
                 toast.success('Successfully Validation');
                 localStorage.setItem('token' , data?.data?.token);
-                navigate('/dashboard'); 
+                navigate('/'); 
             } else {
                 toast.error('Error');
             } 

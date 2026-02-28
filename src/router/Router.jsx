@@ -12,24 +12,30 @@ const Router = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        if(token) {
-            navigate("/dashboard")
-        } else {
-            navigate("/");
+
+        if(!token) {
+            navigate('/login')
         }
+
+
+        // if(token) {
+        //     navigate("/")
+        // } else {
+        //     navigate("/login");
+        // }
     } , [token , navigate])
 
   return (
     <Routes>
         {token ? (
-           <Route path='/dashboard' element = {<Dashboard/>} >
-                <Route path='/dashboard/users' element = {<Users/>} />
-                <Route path='/dashboard/carts' element = {<Carts/>} />
-                <Route path='/dashboard/products' element = {<Products/>} />
-                <Route path='/dashboard/settings' element = {<Settings/>} />
+           <Route path='/' element = {<Dashboard/>} >
+                <Route path='/users' element = {<Users/>} />
+                <Route path='/carts' element = {<Carts/>} />
+                <Route path='/products' element = {<Products/>} />
+                <Route path='/settings' element = {<Settings/>} />
            </Route> 
         ) : (
-            <Route path='/' element = {<LoginForm/>} />
+            <Route path='/login' element = {<LoginForm/>} />
         )}  
     </Routes>
   )

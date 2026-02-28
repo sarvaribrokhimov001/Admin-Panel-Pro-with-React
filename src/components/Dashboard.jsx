@@ -1,19 +1,28 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Outlet, Route, Routes, useNavigate } from 'react-router-dom';
 import "../styles/Dashboard.css";
 import { toast } from 'react-toastify';
+import Sidebar from './Sidebar';
+import Navbar from './Navbar';
+import Users from './Users';
+import Carts from './Carts';
+import Products from './Products';
+import Settings from './Settings';
 
 const Dashboard = () => {
-  const navigate = useNavigate();
   return (
     <div>
-        <button className='dashboard__logout__btn' onClick={() => {
-            localStorage.removeItem('token')
-            setTimeout(() => {
-                toast.error('bye')
-                navigate('/');
-            }, 2000);
-        }}> Log out </button>
+      <div className='dashboard__container'>
+      <Sidebar/>
+
+      <div className='dashboard__navbar'>
+        <Navbar/>
+
+        <div className='dashboard__routes'>
+         <Outlet/>
+        </div>
+      </div>
+      </div>
     </div>
   )
 }
