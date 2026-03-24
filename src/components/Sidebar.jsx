@@ -7,23 +7,23 @@ const Sidebar = () => {
     const navigate = useNavigate();
   return (
     <div className='sidebar'>
-      <ul>
-        <li><NavLink to="/"> Dashboard </NavLink></li>
-        <li><NavLink to="/users"> Users </NavLink></li>
-        <li><NavLink to="/carts"> Carts </NavLink></li>
-        <li><NavLink to="/products"> Products </NavLink></li>
-        <li><NavLink to="/settings"> Settings </NavLink></li>
+      <ul className='sidebar__links'> 
+        <li><NavLink className={'sidebar__link'} to="/"> Dashboard </NavLink></li>
+        <li><NavLink className={'sidebar__link'} to="/users"> Users </NavLink></li>
+        <li><NavLink className={'sidebar__link'} to="/carts"> Carts </NavLink></li>
+        <li><NavLink className={'sidebar__link'} to="/products"> Products </NavLink></li>
+        <li><NavLink className={'sidebar__link'} to="/settings"> Settings </NavLink></li>
       </ul>
 
-
           <button className='sidebar__logout__btn' onClick={() => {
-            localStorage.removeItem('token')
+            toast.error('Bye-bye');
             setTimeout(() => {
-                toast.error('Bye-bye');
+                toast.dismiss(); 
+                localStorage.removeItem('token');
                 navigate('/login');
-            }, 3000);
-        }}> Log out </button>
-    </div>
+            }, 1500);
+          }}> Log out </button>
+      </div>
   )
 }
 

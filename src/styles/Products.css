@@ -1,0 +1,121 @@
+.table__container {
+  padding: 20px;
+  width: 100%;
+  overflow-x: auto;
+  background-color: #0f172a; 
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #111827;
+  color: #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+thead {
+  background-color: #1f2937;
+}
+
+thead th {
+  padding: 14px;
+  text-align: left;
+  font-size: 14px;
+  color: #9ca3af;
+  border-bottom: 1px solid #374151;
+}
+
+tbody tr {
+  border-bottom: 1px solid #1f2937;
+  transition: 0.2s;
+}
+
+tbody tr:hover {
+  background-color: #1e293b;
+}
+
+td {
+  padding: 12px;
+  font-size: 14px;
+}
+
+td img {
+  border-radius: 6px;
+  background: white;
+  padding: 3px;
+}
+
+td:nth-child(5) {
+  max-width: 250px;
+  color: #9ca3af;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+td:nth-child(6) {
+  max-width: 200px;
+  font-weight: 500;
+}
+
+td button {
+  padding: 6px 10px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+td button:nth-child(1) {
+  background-color: #3b82f6;
+  color: white;
+}
+
+td button:nth-child(2) {
+  background-color: #f59e0b;
+  color: black;
+}
+
+td button:nth-child(3) {
+  background-color: #ef4444;
+  color: white;
+}
+
+td button:hover {
+  opacity: 0.8;
+}
+
+tbody {
+  display: block;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+thead, tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+tbody::-webkit-scrollbar {
+  width: 6px;
+}
+
+tbody::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  td:nth-child(5),
+  td:nth-child(6) {
+    display: none;
+  }
+
+  thead th:nth-child(5),
+  thead th:nth-child(6) {
+    display: none;
+  }
+}

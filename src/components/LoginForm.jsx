@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState , useEffect } from 'react';
+import { useState , useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import "../styles/LoginForm.css";
@@ -28,8 +28,10 @@ const LoginForm = () => {
         axios.post(`https://fakestoreapi.com/auth/login` , formData).then(data => {
             if(data?.data?.token) {
                 toast.success('Successfully Validation');
-                localStorage.setItem('token' , data?.data?.token);
-                navigate('/'); 
+                 setTimeout(() => {
+                    localStorage.setItem('token', data?.data?.token);
+                    navigate('/');
+                 }, 2000);
             } else {
                 toast.error('Error');
             } 
@@ -40,23 +42,11 @@ const LoginForm = () => {
   return (
     <div className='login__container'>
         <form className='login__form' onSubmit={handleSubmit}>
-            <input
-            className='login__input' 
-            type="text" 
-            placeholder='username' 
-            value={formData?.username} 
-            name='username'
-            onChange={handleChange}
-            />
+            <input className='login__input'  type="text"  placeholder='username'  value={formData?.username} 
+                name='username' onChange={handleChange} />
 
-            <input
-            className='login__input' 
-            type="password" 
-            placeholder='password' 
-            value={formData?.password} 
-            name='password'
-            onChange={handleChange}
-            />
+            <input className='login__input'  type="password"  placeholder='password'  value={formData?.password} 
+                name='password' onChange={handleChange} />
 
             <button className='login__btn'> Submit </button>
         </form>

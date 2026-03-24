@@ -5,6 +5,25 @@
     padding: 10px;
 }
 
+.sidebar__links {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 100px 50px 250px;
+}
+
+.sidebar__link {
+    list-style: none;
+    text-decoration: none;
+    color: white; 
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.sidebar__link:hover {
+    color: green;
+}
+
 .sidebar__logout__btn {
     width: 200px;
     height: 40px;
@@ -13,9 +32,12 @@
     font-size: 20px;
     border: 5px solid red;
     box-shadow: 0 0 15px rgba(239, 68, 68, 0.7);
+    font-weight: 700;
+    margin-left: 10px;
 }
 
 .sidebar__logout__btn:hover {
     color: rgb(219, 16, 16);
-      box-shadow: 0 6px 20px rgba(220, 38, 38, 0.6) , 0 0 10px rgba(220, 38, 38, 0.5);
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.6) , 0 0 10px rgba(220, 38, 38, 0.5);
+    background-color: black;
 }

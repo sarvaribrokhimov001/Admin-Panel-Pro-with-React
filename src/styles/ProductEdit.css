@@ -1,0 +1,48 @@
+.edit-container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.edit-card {
+  width: 500px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.edit-form input,
+.edit-form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.edit-form button {
+  padding: 10px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.edit-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: crimson;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
